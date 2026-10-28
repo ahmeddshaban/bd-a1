@@ -1,0 +1,34 @@
+CSCI461 Assignment 1 - Supervised text classification results
+Dataset: SMS Spam Collection (UCI #228), after removing duplicates: 5160 messages
+Target: label (spam = 1 = positive class, ham = 0)
+Split: 80% train / 20% test, stratified, random_state=42  (train=4128, test=1032)
+Features: TF-IDF on cleaned_text (stop words removed, min_df=2, sublinear_tf)
+
+=== Main model: Multinomial Naive Bayes (alpha=0.1) ===
+accuracy       : 0.9738
+precision_spam : 0.9040
+recall_spam    : 0.8828
+f1_spam        : 0.8933
+f1_macro       : 0.9392
+
+Classification report:
+              precision    recall  f1-score   support
+
+         ham     0.9835    0.9867    0.9851       904
+        spam     0.9040    0.8828    0.8933       128
+
+    accuracy                         0.9738      1032
+   macro avg     0.9437    0.9348    0.9392      1032
+weighted avg     0.9736    0.9738    0.9737      1032
+
+Confusion matrix (rows = true, cols = predicted, order = [ham, spam]):
+[[892  12]
+ [ 15 113]]
+TN=892  FP=12  FN=15  TP=113
+
+Interpretation: accuracy 97.4% vs 87.6% for always predicting ham, so accuracy alone
+is misleading. Spam precision 0.904 (12 ham messages flagged as spam) and spam recall
+0.883 (15 spam messages missed). False positives are personal messages that use spam-like
+words (free, call, nokia, prices); missed spam uses a web address instead of a number or a conversational style.
+Limitations: class imbalance (small number of spam in the test set), bag-of-words ignores word order and
+context, data is old (2011) and regional so modern spam may differ, NB assumes word independence.

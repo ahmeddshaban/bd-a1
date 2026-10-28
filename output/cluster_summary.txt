@@ -1,0 +1,37 @@
+CSCI461 Assignment 1 - K-Means clustering summary
+Representation: TF-IDF (stop words removed, min_df=3) -> TruncatedSVD(50) -> L2 normalisation
+k tested: 2..12 ; chosen k = 2 (silhouette has no clear peak, so k comes from the data structure: commercial vs personal messages)
+
+Silhouette score per k:
+k
+2     0.0626
+3     0.0636
+4     0.0687
+5     0.0706
+6     0.0773
+7     0.0819
+8     0.0900
+9     0.0888
+10    0.0973
+11    0.0843
+12    0.1078
+
+Quality measure - silhouette score for k=2: 0.0626
+Cluster purity vs true spam/ham labels: 0.879 ; Adjusted Rand Index: 0.488
+Share of all spam messages captured by cluster 1: 92.2%
+
+Cluster sizes and composition:
+label    size   ham  spam  spam_share
+cluster                              
+0        3994  3944    50       0.013
+1        1166   574   592       0.508
+
+Top terms per cluster:
+  cluster 0: good, time, think, today, babe, really, ask, love, dear, great, night, let
+  cluster 1: num, currency, call, free, txt, stop, url, reply, text, mobile, new, claim
+
+Interpretation:
+k was chosen from the data structure (commercial vs personal senders) because silhouette was low for every k (0.063-0.108) and kept rising slowly with k, without a clear peak or elbow.
+Cluster 0 (3994 msgs, 1.3% spam) = personal conversation: good, time, think, today, love, night.
+Cluster 1 (1166 msgs, 50.8% spam) = 'action/commercial' messages with numbers, prices, links and calls to action (num, currency, call, free, txt, stop, url, claim). It holds 92.2% of all spam but also 574 ham messages that mention numbers or calls.
+Silhouette 0.063 means the clusters overlap (normal for short, sparse text). ARI 0.488 shows moderate agreement with the true labels. K-Means groups by vocabulary, not by intent, so it does not replace the supervised classifier; cluster IDs do not correspond to class IDs.
