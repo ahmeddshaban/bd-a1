@@ -1,0 +1,77 @@
+$ docker build -t ahmeddshaban/bd-a1:v1 -t ahmeddshaban/bd-a1:latest .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 899B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for quay.io/jupyter/scipy-notebook:latest
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 120B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM quay.io/jupyter/scipy-notebook:latest@sha256:987bbee395831e8a2b1ee4e989cb41122cc79099ca8052681dc2af5948d64f86
+#5 resolve quay.io/jupyter/scipy-notebook:latest@sha256:987bbee395831e8a2b1ee4e989cb41122cc79099ca8052681dc2af5948d64f86 0.1s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 72.21kB 0.0s done
+#4 DONE 0.1s
+
+#6 [2/7] COPY --chown=1000:100 requirements.txt /tmp/requirements.txt
+#6 DONE 0.1s
+
+#7 [3/7] RUN pip install --no-cache-dir -r /tmp/requirements.txt
+#7 1.400 Collecting wordcloud==1.9.6 (from -r /tmp/requirements.txt (line 3))
+#7 1.571   Downloading wordcloud-1.9.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.4 kB)
+#7 1.574 Requirement already satisfied: numpy>=1.19.3 in /opt/conda/lib/python3.13/site-packages (from wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (2.5.4)
+#7 1.574 Requirement already satisfied: pillow in /opt/conda/lib/python3.13/site-packages (from wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (13.0.0)
+#7 1.574 Requirement already satisfied: matplotlib in /opt/conda/lib/python3.13/site-packages (from wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (3.11.2)
+#7 1.577 Requirement already satisfied: contourpy>=1.0.1 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (1.4.0)
+#7 1.577 Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (0.12.1)
+#7 1.578 Requirement already satisfied: fonttools>=4.28.2 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (4.67.0)
+#7 1.578 Requirement already satisfied: kiwisolver>=1.3.1 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (1.5.1)
+#7 1.579 Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (26.3)
+#7 1.579 Requirement already satisfied: pyparsing>=3 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (3.3.3)
+#7 1.580 Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.13/site-packages (from matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (3.0.0)
+#7 1.591 Requirement already satisfied: six>=1.6 in /opt/conda/lib/python3.13/site-packages (from python-dateutil>=2.7->matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (1.17.0)
+#7 1.591 Requirement already satisfied: tzdata in /opt/conda/lib/python3.13/site-packages (from python-dateutil>=2.7->matplotlib->wordcloud==1.9.6->-r /tmp/requirements.txt (line 3)) (2026.5)
+#7 1.639 Downloading wordcloud-1.9.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (550 kB)
+#7 1.850    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 550.7/550.7 kB 4.0 MB/s  0:00:00
+#7 2.067 Installing collected packages: wordcloud
+#7 2.127 Successfully installed wordcloud-1.9.6
+#7 DONE 2.3s
+
+#8 [4/7] RUN mkdir -p /home/jovyan/bd-a1/data              /home/jovyan/bd-a1/notebook              /home/jovyan/bd-a1/output/figures
+#8 DONE 0.4s
+
+#9 [5/7] COPY --chown=1000:100 data/dataset.csv /home/jovyan/bd-a1/data/dataset.csv
+#9 DONE 0.1s
+
+#10 [6/7] COPY --chown=1000:100 notebook/analysis.ipynb /home/jovyan/bd-a1/notebook/analysis.ipynb
+#10 DONE 0.1s
+
+#11 [7/7] WORKDIR /home/jovyan/bd-a1
+#11 DONE 0.1s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.9s done
+#12 exporting manifest sha256:01a3b47f9df863688eacd8a8eb3f55c1e684f2fd04e31cc30c800cc88bd38589 0.1s done
+#12 exporting config sha256:2073e5889ae98f43ac9dab73b69a3a4e6da24ffacf46feb131ff60ed0da5865d 0.1s done
+#12 exporting attestation manifest sha256:510e10eb85febecdd76787804a3e1b333c6f12934318241785b390b9471b43c5 0.1s done
+#12 exporting manifest list sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70
+#12 exporting manifest list sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70 0.1s done
+#12 naming to docker.io/ahmeddshaban/bd-a1:v1 done
+#12 unpacking to docker.io/ahmeddshaban/bd-a1:v1
+#12 unpacking to docker.io/ahmeddshaban/bd-a1:v1 0.3s done
+#12 naming to docker.io/ahmeddshaban/bd-a1:latest done
+#12 unpacking to docker.io/ahmeddshaban/bd-a1:latest 0.1s done
+#12 DONE 1.8s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vwu8gc88bwn2md1dbjcbb6t7j

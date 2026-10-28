@@ -1,0 +1,295 @@
+[
+    {
+        "Id": "08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40",
+        "Created": "2026-10-26T00:09:32.553389365Z",
+        "Path": "tini",
+        "Args": [
+            "-g",
+            "--",
+            "start.sh",
+            "start-notebook.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 10479,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-26T00:09:32.751711039Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-10-26T00:10:02.503810903Z",
+                        "End": "2026-10-26T00:10:02.785594729Z",
+                        "ExitCode": 0,
+                        "Output": "b'{\"version\": \"2.21.1\"}'\n"
+                    },
+                    {
+                        "Start": "2026-10-26T00:10:05.786189221Z",
+                        "End": "2026-10-26T00:10:06.143679259Z",
+                        "ExitCode": 0,
+                        "Output": "b'{\"version\": \"2.21.1\"}'\n"
+                    },
+                    {
+                        "Start": "2026-10-26T00:10:09.154445362Z",
+                        "End": "2026-10-26T00:10:09.449325677Z",
+                        "ExitCode": 0,
+                        "Output": "b'{\"version\": \"2.21.1\"}'\n"
+                    },
+                    {
+                        "Start": "2026-10-26T00:10:12.451107736Z",
+                        "End": "2026-10-26T00:10:12.758339376Z",
+                        "ExitCode": 0,
+                        "Output": "b'{\"version\": \"2.21.1\"}'\n"
+                    },
+                    {
+                        "Start": "2026-10-26T00:10:15.759987687Z",
+                        "End": "2026-10-26T00:10:16.086854565Z",
+                        "ExitCode": 0,
+                        "Output": "b'{\"version\": \"2.21.1\"}'\n"
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70",
+        "ResolvConfPath": "/var/lib/docker/containers/08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40/hostname",
+        "HostsPath": "/var/lib/docker/containers/08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40/hosts",
+        "LogPath": "/var/lib/docker/containers/08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40/08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40-json.log",
+        "Name": "/bd-a1-container",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "D:\\University\\4 - Fourth Year (Senior)\\first semester\\CSCI461 Big Data\\Assignment\\bd-a1\\output:/home/jovyan/bd-a1/output"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "8888/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8888"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "D:\\University\\4 - Fourth Year (Senior)\\first semester\\CSCI461 Big Data\\Assignment\\bd-a1\\output",
+                "Destination": "/home/jovyan/bd-a1/output",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "08eb2144af96",
+            "Domainname": "",
+            "User": "1000",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8888/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "CONDA_DIR=/opt/conda",
+                "SHELL=/bin/bash",
+                "NB_USER=jovyan",
+                "NB_UID=1000",
+                "NB_GID=100",
+                "LC_ALL=C.UTF-8",
+                "LANG=C.UTF-8",
+                "LANGUAGE=C.UTF-8",
+                "HOME=/home/jovyan",
+                "JUPYTER_PORT=8888"
+            ],
+            "Cmd": [
+                "start-notebook.py"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "/etc/jupyter/docker_healthcheck.py"
+                ],
+                "Interval": 3000000000,
+                "Timeout": 1000000000,
+                "StartPeriod": 3000000000,
+                "Retries": 3
+            },
+            "Image": "ahmeddshaban/bd-a1:v1",
+            "Volumes": null,
+            "WorkingDir": "/home/jovyan/bd-a1",
+            "Entrypoint": [
+                "tini",
+                "-g",
+                "--",
+                "start.sh"
+            ],
+            "Labels": {
+                "maintainer": "Jupyter Project \u003cjupyter@googlegroups.com\u003e",
+                "org.opencontainers.image.created": "2026-09-27T10:25:52.887617+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "c9d8ee02c41b5bfbcd5894b1ee30ffb0e76821c93fa9561c592c3989ee3eb9d9",
+            "SandboxKey": "/var/run/docker/netns/c9d8ee02c41b",
+            "Ports": {
+                "8888/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8888"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8888"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7e6e99fc8e33343866cead7c8ca40c1942893df079241107508f179dea2d88c6",
+                    "EndpointID": "87f02805e8062c41d93a0c91ac27dbc25394c8e30b7c243f0cc0da5d6dbf424f",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "MacAddress": "82:6c:26:7b:0a:9b",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:01a3b47f9df863688eacd8a8eb3f55c1e684f2fd04e31cc30c800cc88bd38589",
+            "size": 8799,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

@@ -1,0 +1,21 @@
+$ docker rm bd-a1-container
+bd-a1-container
+
+$ docker ps -a --filter name=bd-a1     (container removed)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ Get-ChildItem output -Recurse -File     (files are still on the host thanks to the bind mount)
+output\cleaned_data.csv                                1,119,750 bytes
+output\cluster_summary.txt                                 1,832 bytes
+output\figures\confusion_matrix_best_model.png            20,680 bytes
+output\figures\confusion_matrix_nb.png                    17,768 bytes
+output\figures\correlation_heatmap.png                   157,040 bytes
+output\figures\group_comparison_spam_vs_ham.png           86,826 bytes
+output\figures\kmeans_clusters_vs_labels.png             128,058 bytes
+output\figures\kmeans_k_selection.png                     60,067 bytes
+output\figures\length_distribution_by_class.png           25,124 bytes
+output\figures\model_comparison.png                       46,611 bytes
+output\figures\sampling_comparison.png                    26,843 bytes
+output\figures\word_frequency_top20.png                   61,233 bytes
+output\figures\wordclouds_ham_spam.png                   367,222 bytes
+output\model_metrics.txt                                   2,753 bytes

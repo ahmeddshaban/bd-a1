@@ -1,0 +1,17 @@
+$ docker image inspect ahmeddshaban/bd-a1:v1 --format "..."
+Id: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70
+Created: 2026-10-26T00:09:29.516955582Z
+WorkingDir: /home/jovyan/bd-a1
+ExposedPorts: {"8888/tcp":{}}
+Layers: 45
+
+$ docker history ahmeddshaban/bd-a1:v1   (layers added by our Dockerfile)
+SIZE      CREATED BY
+0B        EXPOSE [8888/tcp]
+4.1kB     WORKDIR /home/jovyan/bd-a1
+94.2kB    COPY --chown=1000:100 notebook/analysis.ipynb /home/jovyan/bd-a1/notebook/analysis.ipynb # buildkit
+508kB     COPY --chown=1000:100 data/dataset.csv /home/jovyan/bd-a1/data/dataset.csv # buildkit
+32.8kB    RUN /bin/bash -o pipefail -c mkdir -p /home/jovyan/bd-a1/data              /home/jovyan/bd-a1/notebook              /home/jovyan/bd-a1/output/figures 
+1.93MB    RUN /bin/bash -o pipefail -c pip install --no-cache-dir -r /tmp/requirements.txt # buildkit
+12.3kB    COPY --chown=1000:100 requirements.txt /tmp/requirements.txt # buildkit
+4.1kB     WORKDIR /home/jovyan

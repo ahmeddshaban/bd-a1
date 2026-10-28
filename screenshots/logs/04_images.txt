@@ -1,0 +1,8 @@
+$ docker images ahmeddshaban/bd-a1
+IMAGE                       ID             DISK USAGE   CONTENT SIZE   EXTRA
+ahmeddshaban/bd-a1:latest   0c3051906900       5.46GB          1.3GB   U    
+ahmeddshaban/bd-a1:v1       0c3051906900       5.46GB          1.3GB   U    
+
+$ docker images quay.io/jupyter/scipy-notebook
+IMAGE                                   ID             DISK USAGE   CONTENT SIZE   EXTRA
+quay.io/jupyter/scipy-notebook:latest   987bbee39583       5.46GB          1.3GB        

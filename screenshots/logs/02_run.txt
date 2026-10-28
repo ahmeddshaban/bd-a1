@@ -1,0 +1,2 @@
+$ docker run -d --name bd-a1-container -p 8888:8888 -v "${PWD}/output:/home/jovyan/bd-a1/output" ahmeddshaban/bd-a1:v1
+08eb2144af96b7e67f01cb20d2e84748745b253f84c577563b1e5ddb93649e40

@@ -1,0 +1,9 @@
+$ docker stop bd-a1-container
+bd-a1-container
+
+$ docker ps --filter name=bd-a1        (no running container)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ docker ps -a --filter name=bd-a1     (stopped container still exists)
+CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS                      PORTS     NAMES
+08eb2144af96   ahmeddshaban/bd-a1:v1   "tini -g -- start.sh…"   2 minutes ago   Exited (137) 1 second ago             bd-a1-container

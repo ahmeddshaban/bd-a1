@@ -1,0 +1,261 @@
+$ docker push ahmeddshaban/bd-a1:v1
+The push refers to repository [docker.io/ahmeddshaban/bd-a1]
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+44136fa355b3: Already exists
+06ad70e463aa: Layer already exists
+4e07a0f12b2c: Waiting
+3005176221ea: Waiting
+eb3b8b0f649b: Waiting
+168a0b61124f: Waiting
+168a0b61124f: Waiting
+4e07a0f12b2c: Waiting
+3005176221ea: Waiting
+eb3b8b0f649b: Waiting
+4e07a0f12b2c: Layer already exists
+3005176221ea: Waiting
+eb3b8b0f649b: Waiting
+168a0b61124f: Waiting
+4f4fb700ef54: Waiting
+168a0b61124f: Waiting
+4f4fb700ef54: Layer already exists
+6e0cff85d1a2: Waiting
+e8ef68ee8ae1: Waiting
+3005176221ea: Layer already exists
+eb3b8b0f649b: Layer already exists
+26336dc677a7: Waiting
+e8ef68ee8ae1: Layer already exists
+4f4fb700ef54: Layer already exists
+f05e80f600e4: Waiting
+26336dc677a7: Layer already exists
+c0edfa4a8d6a: Waiting
+168a0b61124f: Waiting
+90efdaabd7fc: Waiting
+6e0cff85d1a2: Layer already exists
+90efdaabd7fc: Waiting
+f05e80f600e4: Waiting
+c0edfa4a8d6a: Waiting
+d0983e2a7257: Waiting
+23be2e9e6cde: Waiting
+f05e80f600e4: Layer already exists
+aae626180a57: Waiting
+c0edfa4a8d6a: Layer already exists
+90efdaabd7fc: Layer already exists
+4f4fb700ef54: Layer already exists
+6dbf4e57fade: Waiting
+4f4fb700ef54: Layer already exists
+d0983e2a7257: Layer already exists
+23be2e9e6cde: Layer already exists
+5f7db4f8a70a: Waiting
+aae626180a57: Layer already exists
+d3d7a9276c5f: Waiting
+5f7db4f8a70a: Layer already exists
+d3d7a9276c5f: Layer already exists
+6dbf4e57fade: Layer already exists
+34912d80e06d: Waiting
+22bdac0265ca: Waiting
+34912d80e06d: Waiting
+22bdac0265ca: Waiting
+fb880efdf94a: Waiting
+4f4fb700ef54: Layer already exists
+34912d80e06d: Layer already exists
+22bdac0265ca: Layer already exists
+fb880efdf94a: Layer already exists
+d426eb1247e2: Waiting
+32ac2f60ee19: Waiting
+da0609f0bb59: Waiting
+1b293c013c7f: Waiting
+d426eb1247e2: Layer already exists
+32ac2f60ee19: Layer already exists
+da0609f0bb59: Layer already exists
+6fcd6e648dbf: Waiting
+4f4fb700ef54: Layer already exists
+da0e8ed9a1ed: Waiting
+006223df000e: Waiting
+35c9b5ce6405: Waiting
+f0fe220c91cf: Waiting
+da0e8ed9a1ed: Layer already exists
+006223df000e: Layer already exists
+1b293c013c7f: Waiting
+6fcd6e648dbf: Waiting
+4f4fb700ef54: Layer already exists
+35c9b5ce6405: Waiting
+f0fe220c91cf: Waiting
+946693655606: Waiting
+168a0b61124f: Pushed
+625fbfa36d07: Waiting
+1b293c013c7f: Layer already exists
+6fcd6e648dbf: Layer already exists
+6ed2e3207f87: Waiting
+35c9b5ce6405: Waiting
+f0fe220c91cf: Waiting
+946693655606: Waiting
+625fbfa36d07: Waiting
+6ed2e3207f87: Waiting
+6ed2e3207f87: Waiting
+35c9b5ce6405: Waiting
+f0fe220c91cf: Waiting
+946693655606: Waiting
+625fbfa36d07: Waiting
+625fbfa36d07: Waiting
+946693655606: Waiting
+35c9b5ce6405: Pushed
+4f4fb700ef54: Layer already exists
+6ed2e3207f87: Pushed
+625fbfa36d07: Pushed
+946693655606: Pushed
+f0fe220c91cf: Pushed
+v1: digest: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70 size: 856
+
+$ docker push ahmeddshaban/bd-a1:latest
+The push refers to repository [docker.io/ahmeddshaban/bd-a1]
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Waiting
+06ad70e463aa: Waiting
+4e07a0f12b2c: Waiting
+4e07a0f12b2c: Layer already exists
+3005176221ea: Waiting
+eb3b8b0f649b: Waiting
+168a0b61124f: Waiting
+44136fa355b3: Already exists
+06ad70e463aa: Waiting
+6e0cff85d1a2: Waiting
+3005176221ea: Waiting
+eb3b8b0f649b: Waiting
+168a0b61124f: Already exists
+4f4fb700ef54: Waiting
+06ad70e463aa: Layer already exists
+eb3b8b0f649b: Layer already exists
+f05e80f600e4: Waiting
+c0edfa4a8d6a: Waiting
+e8ef68ee8ae1: Waiting
+4f4fb700ef54: Layer already exists
+26336dc677a7: Waiting
+90efdaabd7fc: Waiting
+6e0cff85d1a2: Layer already exists
+3005176221ea: Layer already exists
+90efdaabd7fc: Waiting
+f05e80f600e4: Waiting
+c0edfa4a8d6a: Waiting
+e8ef68ee8ae1: Waiting
+26336dc677a7: Waiting
+90efdaabd7fc: Layer already exists
+d0983e2a7257: Waiting
+f05e80f600e4: Layer already exists
+c0edfa4a8d6a: Waiting
+e8ef68ee8ae1: Layer already exists
+4f4fb700ef54: Layer already exists
+26336dc677a7: Waiting
+23be2e9e6cde: Waiting
+aae626180a57: Waiting
+c0edfa4a8d6a: Layer already exists
+4f4fb700ef54: Layer already exists
+5f7db4f8a70a: Waiting
+26336dc677a7: Layer already exists
+23be2e9e6cde: Layer already exists
+aae626180a57: Layer already exists
+d3d7a9276c5f: Waiting
+6dbf4e57fade: Waiting
+d0983e2a7257: Layer already exists
+34912d80e06d: Waiting
+22bdac0265ca: Waiting
+6dbf4e57fade: Layer already exists
+fb880efdf94a: Waiting
+34912d80e06d: Waiting
+22bdac0265ca: Waiting
+d426eb1247e2: Waiting
+4f4fb700ef54: Layer already exists
+5f7db4f8a70a: Layer already exists
+d3d7a9276c5f: Waiting
+fb880efdf94a: Waiting
+34912d80e06d: Layer already exists
+22bdac0265ca: Layer already exists
+d426eb1247e2: Waiting
+da0609f0bb59: Waiting
+4f4fb700ef54: Layer already exists
+da0e8ed9a1ed: Waiting
+d3d7a9276c5f: Layer already exists
+32ac2f60ee19: Waiting
+1b293c013c7f: Waiting
+6fcd6e648dbf: Waiting
+35c9b5ce6405: Waiting
+f0fe220c91cf: Waiting
+32ac2f60ee19: Layer already exists
+fb880efdf94a: Layer already exists
+d426eb1247e2: Layer already exists
+da0609f0bb59: Layer already exists
+006223df000e: Waiting
+da0e8ed9a1ed: Layer already exists
+4f4fb700ef54: Layer already exists
+35c9b5ce6405: Layer already exists
+f0fe220c91cf: Layer already exists
+6ed2e3207f87: Waiting
+946693655606: Waiting
+625fbfa36d07: Waiting
+006223df000e: Layer already exists
+4f4fb700ef54: Layer already exists
+1b293c013c7f: Layer already exists
+6fcd6e648dbf: Layer already exists
+6ed2e3207f87: Layer already exists
+946693655606: Layer already exists
+625fbfa36d07: Waiting
+625fbfa36d07: Layer already exists
+latest: digest: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70 size: 856

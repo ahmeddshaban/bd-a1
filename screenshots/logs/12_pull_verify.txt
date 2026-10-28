@@ -1,0 +1,50 @@
+$ docker rmi ahmeddshaban/bd-a1:v1 ahmeddshaban/bd-a1:latest     (delete the local copy first)
+Untagged: ahmeddshaban/bd-a1:v1
+Untagged: ahmeddshaban/bd-a1:latest
+Deleted: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70
+...
+
+$ docker pull ahmeddshaban/bd-a1:v1
+v1: Pulling from ahmeddshaban/bd-a1
+44136fa355b3: Already exists
+6ed2e3207f87: Already exists
+4f4fb700ef54: Already exists
+f0fe220c91cf: Already exists
+35c9b5ce6405: Already exists
+946693655606: Already exists
+625fbfa36d07: Already exists
+4f4fb700ef54: Pull complete
+35c9b5ce6405: Pull complete
+f0fe220c91cf: Pull complete
+6ed2e3207f87: Pull complete
+946693655606: Pull complete
+625fbfa36d07: Pull complete
+Digest: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70
+Status: Downloaded newer image for ahmeddshaban/bd-a1:v1
+docker.io/ahmeddshaban/bd-a1:v1
+
+$ docker run -d --name bd-a1-pulltest -p 8889:8888 -v "${PWD}/output:/home/jovyan/bd-a1/output" ahmeddshaban/bd-a1:v1
+c3e14a862144fe48516bdbe2f1194f47e1dbc27643565f20cc8ff6b626cbc705
+
+$ docker exec bd-a1-pulltest jupyter nbconvert --to notebook --execute --inplace notebook/analysis.ipynb
+[NbConvertApp] Converting notebook notebook/analysis.ipynb to notebook
+[NbConvertApp] Writing 1221713 bytes to notebook/analysis.ipynb
+
+$ docker exec bd-a1-pulltest cat output/model_metrics.txt | head -13
+CSCI461 Assignment 1 - Supervised text classification results
+Dataset: SMS Spam Collection (UCI #228), after removing duplicates: 5160 messages
+Target: label (spam = 1 = positive class, ham = 0)
+Split: 80% train / 20% test, stratified, random_state=42  (train=4128, test=1032)
+Features: TF-IDF on cleaned_text (stop words removed, min_df=2, sublinear_tf)
+
+=== Main model: Multinomial Naive Bayes (alpha=0.1) ===
+accuracy       : 0.9738
+precision_spam : 0.9040
+recall_spam    : 0.8828
+f1_spam        : 0.8933
+f1_macro       : 0.9392
+
+
+$ docker ps --filter name=bd-a1-pulltest
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+c3e14a862144   ahmeddshaban/bd-a1:v1   "tini -g -- start.sh…"   42 seconds ago   Up 41 seconds (healthy)   0.0.0.0:8889->8888/tcp, [::]:8889->8888/tcp   bd-a1-pulltest

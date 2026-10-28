@@ -1,0 +1,10 @@
+$ docker inspect bd-a1-container --format "..."   (key fields; full JSON in docker_inspect_full.json)
+Name: /bd-a1-container
+Image: ahmeddshaban/bd-a1:v1
+State: running (running=true, health=healthy)
+Started: 2026-10-26T00:09:32.751711039Z
+WorkingDir: /home/jovyan/bd-a1
+User: 1000
+Ports: {"8888/tcp":[{"HostIp":"0.0.0.0","HostPort":"8888"},{"HostIp":"::","HostPort":"8888"}]}
+Mounts:
+  - Type=bind  Source=D:\University\4 - Fourth Year (Senior)\first semester\CSCI461 Big Data\Assignment\bd-a1\output  Destination=/home/jovyan/bd-a1/output  RW=true

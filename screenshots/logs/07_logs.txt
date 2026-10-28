@@ -1,0 +1,43 @@
+$ docker logs bd-a1-container
+INFO[2026-10-26 00:09:32] Entered start.sh with args: start-notebook.py
+INFO[2026-10-26 00:09:32] Running hooks in: /usr/local/bin/start-notebook.d as uid: 1000 gid: 100
+INFO[2026-10-26 00:09:33] Done running hooks in: /usr/local/bin/start-notebook.d
+INFO[2026-10-26 00:09:33] Running hooks in: /usr/local/bin/before-notebook.d as uid: 1000 gid: 100
+INFO[2026-10-26 00:09:33] Sourcing shell script: /usr/local/bin/before-notebook.d/10activate-conda-env.sh
+INFO[2026-10-26 00:09:33] Done running hooks in: /usr/local/bin/before-notebook.d
+INFO[2026-10-26 00:09:33] Executing the command: start-notebook.py
+Executing: jupyter lab
+[W 2026-10-26 00:09:35.636 ServerApp] A `_jupyter_server_extension_points` function was not found in nbclassic. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2026-10-26 00:09:35.639 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2026-10-26 00:09:35.642 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2026-10-26 00:09:35.645 ServerApp] jupyterlab | extension was successfully linked.
+[I 2026-10-26 00:09:35.645 ServerApp] jupyterlab_git | extension was successfully linked.
+[I 2026-10-26 00:09:35.647 ServerApp] nbclassic | extension was successfully linked.
+[I 2026-10-26 00:09:35.647 ServerApp] nbdime | extension was successfully linked.
+[I 2026-10-26 00:09:35.650 ServerApp] notebook | extension was successfully linked.
+[I 2026-10-26 00:09:35.654 ServerApp] Writing Jupyter server cookie secret to /home/jovyan/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2026-10-26 00:09:35.696 ServerApp] notebook_shim | extension was successfully linked.
+[W 2026-10-26 00:09:35.716 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 2026-10-26 00:09:35.717 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2026-10-26 00:09:35.718 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2026-10-26 00:09:35.719 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2026-10-26 00:09:35.725 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.13/site-packages/jupyterlab
+[I 2026-10-26 00:09:35.725 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 2026-10-26 00:09:35.725 LabApp] Extension Manager is 'pypi'.
+[I 2026-10-26 00:09:35.782 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2026-10-26 00:09:35.791 ServerApp] jupyterlab_git | extension was successfully loaded.
+[I 2026-10-26 00:09:35.797 ServerApp] nbclassic | extension was successfully loaded.
+[I 2026-10-26 00:09:35.871 ServerApp] nbdime | extension was successfully loaded.
+[I 2026-10-26 00:09:35.876 ServerApp] notebook | extension was successfully loaded.
+[I 2026-10-26 00:09:35.877 ServerApp] Serving notebooks from local directory: /home/jovyan/bd-a1
+[I 2026-10-26 00:09:35.877 ServerApp] Jupyter Server 2.21.1 is running at:
+[I 2026-10-26 00:09:35.877 ServerApp] http://localhost:8888/lab?token=791263...(hidden)
+[I 2026-10-26 00:09:35.877 ServerApp]     http://127.0.0.1:8888/lab?token=791263...(hidden)
+[I 2026-10-26 00:09:35.877 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2026-10-26 00:09:35.879 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/jpserver-7-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=791263...(hidden)
+        http://127.0.0.1:8888/lab?token=791263...(hidden)
