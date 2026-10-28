@@ -32,3 +32,22 @@ is misleading. Spam precision 0.904 (12 ham messages flagged as spam) and spam r
 words (free, call, nokia, prices); missed spam uses a web address instead of a number or a conversational style.
 Limitations: class imbalance (small number of spam in the test set), bag-of-words ignores word order and
 context, data is old (2011) and regional so modern spam may differ, NB assumes word independence.
+
+=== Bonus: model comparison (GridSearchCV, 5-fold stratified CV on training set, scoring = F1 spam) ===
+                                 cv_f1_spam  accuracy  precision_spam  recall_spam  f1_spam  f1_macro
+model                                                                                                
+Baseline MultinomialNB (Sec. 9)         NaN    0.9738          0.9040       0.8828   0.8933    0.9392
+MultinomialNB                        0.9397    0.9835          0.9512       0.9141   0.9323    0.9614
+LogisticRegression                   0.9359    0.9884          0.9462       0.9609   0.9535    0.9734
+LinearSVC                            0.9386    0.9864          0.9453       0.9453   0.9453    0.9688
+
+Best parameters:
+  Baseline MultinomialNB (Sec. 9): alpha=0.1, unigrams, min_df=2
+  MultinomialNB: {'clf__alpha': 0.1, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2)}
+  LogisticRegression: {'clf__C': 30, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 1)}
+  LinearSVC: {'clf__C': 3, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2)}
+
+Best tuned model on the test set (F1 spam): LogisticRegression
+Confusion matrix of best model:
+[[897   7]
+ [  5 123]]
