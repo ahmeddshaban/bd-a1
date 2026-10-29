@@ -244,6 +244,12 @@ type output\model_metrics.txt        # macOS/Linux: cat output/model_metrics.txt
 The metrics must be the same as in this repository (all random steps use `random_state=42`).
 See `screenshots/10_docker_pull_and_run.png`.
 
+**Verified on a second team member's machine:** Jana Mohamed Farouk pulled `ahmeddshaban/bd-a1:v1` on her own
+Windows laptop (all layers downloaded fresh, same digest `sha256:0c305190...`), ran the container with the bind mount
+and executed the notebook. `output/model_metrics.txt` was identical (NB accuracy 0.9738, confusion matrix
+`[[892 12] [15 113]]`). Evidence: `screenshots/11_teammate_pull_test.png` and the full log
+`screenshots/logs/13_teammate_pull_jana.txt`.
+
 ## 8. What the notebook does
 
 | Section | Content |
@@ -308,6 +314,7 @@ k (0.06-0.11) with no clear peak, so k was chosen from the structure of the data
 | `docker rm` -> outputs still on the host | `screenshots/08_bind_mount_persistence.png` |
 | `docker push` | `screenshots/09_docker_push.png` |
 | `docker pull` + run of the published image | `screenshots/10_docker_pull_and_run.png` |
+| teammate (Jana) pulls and runs the image on her own machine | `screenshots/11_teammate_pull_test.png`, `screenshots/logs/13_teammate_pull_jana.txt` |
 | JupyterLab running in the container | `screenshots/jupyter_lab_running_in_container.png` |
 | Kernel -> Restart Kernel and Run All | `screenshots/jupyter_restart_and_run_all.png` |
 | notebook results (13 screenshots) | `screenshots/jupyter_*.png` |
