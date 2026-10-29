@@ -12,6 +12,7 @@ Dockerfile -> Custom Image -> Container -> Jupyter -> Data Cleaning -> Sampling 
 
 | | |
 |---|---|
+| **GitHub repository** | <https://github.com/ahmeddshaban/bd-a1> |
 | **Docker Hub image** | [`ahmeddshaban/bd-a1:v1`](https://hub.docker.com/r/ahmeddshaban/bd-a1) (also tagged `latest`) |
 | **Dataset** | SMS Spam Collection - UCI ML Repository #228 (CC BY 4.0) |
 | **Notebook** | [`notebook/analysis.ipynb`](notebook/analysis.ipynb) |
@@ -65,7 +66,16 @@ with open("data/dataset.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["label", "message"]); w.writerows(rows)
 ```
 
-## 3. Requirements
+## 3. Get the project
+
+```bash
+git clone https://github.com/ahmeddshaban/bd-a1.git
+cd bd-a1
+```
+
+Or download the ZIP from the GitHub page (Code -> Download ZIP), or skip this and use the Docker Hub image (Option A below).
+
+## 3b. Requirements
 
 * Docker Desktop (Windows / macOS) or Docker Engine (Linux), running.
 * About 6 GB of free disk space (the Jupyter SciPy base image is large).
@@ -87,6 +97,11 @@ EXPOSE 8888
 * `--chown=${NB_UID}:${NB_GID}` makes the copied files belong to the notebook user `jovyan`, so Jupyter can edit them.
 * Each instruction creates an **image layer**. Layers are cached: if only the notebook changes, Docker reuses the
   base image and the `pip install` layer and rebuilds only the last few layers.
+* **Why the image contains the full notebook (not an empty one):** the assignment asks to copy the notebook
+  into the image. We copy the final version so that anyone who pulls `ahmeddshaban/bd-a1:v1` can reproduce every
+  result immediately with *Restart and Run All* (or `nbconvert --execute`), without any extra files from the host.
+  The outputs themselves are **not** in the image (`output/` is excluded by `.dockerignore`); they are produced at
+  run time and saved through the bind mount.
 
 ## 5. Reproduce the project - step by step
 
@@ -234,7 +249,7 @@ See `screenshots/10_docker_pull_and_run.png`.
 | Section | Content |
 |---|---|
 | 2 Dataset understanding | `head`, `shape`, `columns`, `dtypes`, `info`, `describe`, class balance, what a row is, column roles |
-| 3 Missing values / duplicates | 0 missing; 403 exact duplicates -> dropped (justified); shape 5,574 -> 5,160 |
+| 3 Missing values / duplicates | 0 missing; 403 exact duplicates + 11 that differed only by leading/trailing spaces = 414 rows dropped (justified); shape 5,574 -> 5,160 |
 | 4 `loc` / `iloc` | conditional `loc` (long spam that mentions "free"), positional `iloc`, `iloc[np.r_[0:3, 100:103, -3:0]]` |
 | 5 Transformations | type conversion (`category`), encoding (`label_num`), 9 created features, binning (`length_bin`), min-max normalisation |
 | 6 Sampling | simple random, stratified, cluster (10 of 50 blocks) + 300-repeat stability experiment |
