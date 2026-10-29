@@ -1,0 +1,105 @@
+# Reproducibility check on a second team member's machine (Jana Mohamed Farouk), Windows PowerShell
+# Part 1 - pulling the published image from Docker Hub (fresh machine: layers are downloaded, not 'Already exists')
+
+$ docker run -d --name bd-a1-pulltest -p 8888:8888 -v "${PWD}/output:/home/jovyan/bd-a1/output" ahmeddshaban/bd-a1:v1
+Unable to find image 'ahmeddshaban/bd-a1:v1' locally
+v1: Pulling from ahmeddshaban/bd-a1
+44136fa355b3: Download complete
+23be2e9e6cde: Pulling fs layer
+da0609f0bb59: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Already exists
+da0609f0bb59: Pull complete
+006223df000e: Pull complete
+35c9b5ce6405: Pull complete
+625fbfa36d07: Pull complete
+da0e8ed9a1ed: Pull complete
+6ed2e3207f87: Pull complete
+6dbf4e57fade: Pull complete
+6fcd6e648dbf: Pull complete
+d0983e2a7257: Pull complete
+1b293c013c7f: Pull complete
+f05e80f600e4: Pull complete
+5f7db4f8a70a: Pull complete
+32ac2f60ee19: Pull complete
+34912d80e06d: Pull complete
+90efdaabd7fc: Pull complete
+06ad70e463aa: Pull complete
+3005176221ea: Pull complete
+6e0cff85d1a2: Pull complete
+e8ef68ee8ae1: Pull complete
+eb3b8b0f649b: Pull complete
+26336dc677a7: Pull complete
+d3d7a9276c5f: Pull complete
+f0fe220c91cf: Pull complete
+d426eb1247e2: Pull complete
+aae626180a57: Pull complete
+946693655606: Pull complete
+c0edfa4a8d6a: Pull complete
+fb880efdf94a: Pull complete
+168a0b61124f: Download complete
+Digest: sha256:0c3051906900e2fe1905054d683f7d3695472c8932f76f9717edb6fcdc642b70
+Status: Downloaded newer image for ahmeddshaban/bd-a1:v1
+
+# Part 2 - running the notebook inside the pulled image with the output/ bind mount
+
+PS C:\Users\Jana work\pulltest> docker run -d --name bd-a1-pulltest -p 8888:8888 -v "${PWD}/output:/home/jovyan/bd-a1/output" ahmeddshaban/bd-a1:v1
+aacd0f930368cc4df6d5b4d9f2fcb42cbff6989db48c0c3b0fa504f1e7758ce3
+PS C:\Users\Jana work\pulltest> docker exec bd-a1-pulltest jupyter nbconvert --to notebook --execute --inplace notebook/analysis.ipynb
+[NbConvertApp] Converting notebook notebook/analysis.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[NbConvertApp] Writing 1227733 bytes to notebook/analysis.ipynb
+PS C:\Users\Jana work\pulltest> type output\model_metrics.txt
+CSCI461 Assignment 1 - Supervised text classification results
+Dataset: SMS Spam Collection (UCI #228), after removing duplicates: 5160 messages
+Target: label (spam = 1 = positive class, ham = 0)
+Split: 80% train / 20% test, stratified, random_state=42  (train=4128, test=1032)
+Features: TF-IDF on cleaned_text (stop words removed, min_df=2, sublinear_tf)
+
+=== Main model: Multinomial Naive Bayes (alpha=0.1) ===
+accuracy       : 0.9738
+precision_spam : 0.9040
+recall_spam    : 0.8828
+f1_spam        : 0.8933
+f1_macro       : 0.9392
+
+Classification report:
+              precision    recall  f1-score   support
+
+         ham     0.9835    0.9867    0.9851       904
+        spam     0.9040    0.8828    0.8933       128
+
+    accuracy                         0.9738      1032
+   macro avg     0.9437    0.9348    0.9392      1032
+weighted avg     0.9736    0.9738    0.9737      1032
+
+Confusion matrix (rows = true, cols = predicted, order = [ham, spam]):
+[[892  12]
+ [ 15 113]]
+TN=892  FP=12  FN=15  TP=113
+
+Interpretation: accuracy 97.4% vs 87.6% for always predicting ham, so accuracy alone
+is misleading. Spam precision 0.904 (12 ham messages flagged as spam) and spam recall
+0.883 (15 spam messages missed). False positives are personal messages that use spam-like
+words (free, call, nokia, prices); missed spam uses a web address instead of a number or a conversational style.
+Limitations: class imbalance (small number of spam in the test set), bag-of-words ignores word order and
+context, data is old (2011) and regional so modern spam may differ, NB assumes word independence.
+
+=== Bonus: model comparison (GridSearchCV, 5-fold stratified CV on training set, scoring = F1 spam) ===
+                                 cv_f1_spam  accuracy  precision_spam  recall_spam  f1_spam  f1_macro
+model
+Baseline MultinomialNB (Sec. 9)         NaN    0.9738          0.9040       0.8828   0.8933    0.9392
+MultinomialNB                        0.9397    0.9835          0.9512       0.9141   0.9323    0.9614
+LogisticRegression                   0.9359    0.9884          0.9462       0.9609   0.9535    0.9734
+LinearSVC                            0.9386    0.9864          0.9453       0.9453   0.9453    0.9688
+
+Best parameters:
+  Baseline MultinomialNB (Sec. 9): alpha=0.1, unigrams, min_df=2
+  MultinomialNB: {'clf__alpha': 0.1, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2)}
+  LogisticRegression: {'clf__C': 30, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 1)}
+  LinearSVC: {'clf__C': 3, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2)}
+
+Best tuned model on the test set (F1 spam): LogisticRegression
+Confusion matrix of best model:
+[[897   7]
+ [  5 123]]
